@@ -146,19 +146,39 @@ GET https://ai-newsapi-e6bc67c3e98b.herokuapp.com/news/theverge
 
 ## Error Handling
 
+## Error Handling
+
 The API returns standard HTTP status codes:
 
-- **200 OK**: The request was successful, and the response contains the data.
-- **400 Bad Request**: The **newspaperId** parameter provided is invalid or not supported.
-- **500 Internal Server Error**: Something went wrong on the server side.
+- **200 OK**: The request was successful, and the response contains the requested data (either all articles or filtered by `newspaperId`).
+- **404 Not Found**: The requested resource could not be found:
+  - If no articles are available when fetching all articles via the `/news` endpoint.
+  - If no articles are found for the provided `newspaperId` via the `/news/{newspaperId}` endpoint.
+- **500 Internal Server Error**: Something went wrong on the server side, such as an issue with the web scraping or unexpected exceptions.
 
-For example, if you provide an invalid `newspaperId`, the API will return:
+### Example Response:
 
-```json
-{
-  "error": "Invalid newspaperId provided"
-}
-```
+1. **404 Not Found (No Articles Available)**:
+   - Request: `GET /news`
+   - Response:
+     ```
+     No articles available at this time. Please try again later.
+     ```
+
+2. **404 Not Found (No Articles for NewspaperId)**:
+   - Request: `GET /news/techcrunch`
+   - Response:
+     ```
+     No articles found for the specified newspaperId: techcrunch. Please check the ID and try again.
+     ```
+
+3. **500 Internal Server Error**:
+   - If an unexpected error occurs during processing (e.g., scraping failure or network issue), the API returns:
+     - Request: `GET /news`
+     - Response:
+       ```
+       An error occurred while fetching news articles. Please try again later.
+       ```
 
 ---
 
