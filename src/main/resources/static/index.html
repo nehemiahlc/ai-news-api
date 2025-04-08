@@ -59,9 +59,10 @@
 
         .cards {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between; /* Spreads cards across the screen */
             flex-wrap: wrap;
             gap: 30px;
+            margin-top: 20px;
         }
 
         .card {
@@ -71,6 +72,9 @@
             width: 300px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column; /* Keeps card content stacked */
+            justify-content: space-between;
         }
 
         .card:hover {
@@ -85,6 +89,8 @@
             padding: 10px 20px;
             border-radius: 30px;
             transition: background-color 0.3s, color 0.3s;
+            display: block; /* Makes the link a block element */
+            margin-top: 10px; /* Adds spacing between the link and content */
         }
 
         .card a:hover {
@@ -100,6 +106,7 @@
             font-size: 1.1em;
         }
     </style>
+
 </head>
 <body>
 <header>
@@ -121,7 +128,12 @@
         <div class="card">
             <h3>API Documentation</h3>
             <p>Get detailed information on how to use the API.</p>
-            <a href="https://rapidapi.com/nehemiahlchandler/api/aibrief" target="_blank">View Docs <i class="fas fa-arrow-right"></i></a>
+            <a href="https://rapidapi.com/nehemiahlchandler/api/aibrief" target="_blank" class="btn">
+                Access API Docs <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="https://ai-newsapi-e6bc67c3e98b.herokuapp.com/swagger-ui/index.html" target="_blank" class="btn">
+                Open Swagger UI <i class="fas fa-arrow-right"></i>
+            </a>
         </div>
 
         <div class="card">
