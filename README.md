@@ -162,6 +162,12 @@ For example, if you provide an invalid `newspaperId`, the API will return:
 
 ---
 
+## 🧠 Developer Docs
+- [Swagger UI](http://localhost:8080/swagger-ui/index.html#/)
+- [RapidAPI Page](https://rapidapi.com/nehemiahlchandler/api/aibrief)
+
+---
+
 ## Technologies Used
 
 - **Java**: Used for the backend logic and web scraping.
