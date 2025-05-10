@@ -5,7 +5,6 @@ Welcome to the AIBrief, an AI News Web Scraper API! This API provides a curated 
 
 ## Table of Contents
 
-1. [Base URL](#base-url)
 2. [Endpoints](#endpoints)
    - [GET /news](#get-news)
    - [GET /news/{newspaperId}](#get-newsnewspaperid)
@@ -16,12 +15,6 @@ Welcome to the AIBrief, an AI News Web Scraper API! This API provides a curated 
 7. [Contact](#contact)
 
 ---
-
-## Base URL
-
-```
-https://ai-newsapi-e6bc67c3e98b.herokuapp.com/
-```
 
 ---
 
